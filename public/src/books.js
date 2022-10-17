@@ -1,4 +1,5 @@
 const { forEach } = require("../../test/fixtures/authors.fixture");
+const { findAccountById } = require("./accounts");
 
 function findAuthorById(authors, id) {
   //Goal: It returns the author object that has the matching ID.
@@ -41,7 +42,9 @@ function getBorrowersForBook(book, accounts) {
   const borrowsArray = book.borrows;
   borrowsArray.forEach((borrow)=> {
     //for each borrow objects we want to find the corresponding id in accounts
-    const matchingAccountById = accounts.find((account)=> borrow.id === account.id);
+    const matchingAccountById = findAuthorById(accounts, borrow.id);
+                    //const found = accounts.find((account)=> id === account.id);
+    //const matchingAccountById = accounts.find((account)=> borrow.id === account.id);
     let newResultObject = {...borrow, ...matchingAccountById};
     resultArray.push(newResultObject);
 });

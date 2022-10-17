@@ -1,3 +1,5 @@
+const { findAuthorById } = require("./books");
+
 function findAccountById(accounts, id) {
   //Goal: Return the account object that has the matching id
   //find id in accounts array of objects
@@ -69,7 +71,8 @@ function getBooksPossessedByAccount(account, books, authors) {
 
     else {
       let newBook = book;
-      newBookAuthor = authors.find(function(author) { return author.id === book.authorId; });
+      newBookAuthor = findAuthorById(authors, book.authorId);
+      //newBookAuthor = authors.find(function(author) { return author.id === book.authorId; });
       //console.log(newBookAuthor);
       /* Output from line of code above
       { id: 10, name: { first: 'Giles', last: 'Barlow' } }

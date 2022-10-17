@@ -5,7 +5,9 @@ function getTotalBooksCount(books = []) {
 
 function getTotalAccountsCount(accounts = []) {
   //Goal: Return a _number_ that represents the number of account objects inside of the array.
-  return accounts.length;
+  //return accounts.length;
+  const mappedAccounts = accounts.map((account)=> account.id);
+  return mappedAccounts.length;
 }
 
 function getBooksBorrowedCount(books) {

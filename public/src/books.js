@@ -48,8 +48,14 @@ function getBorrowersForBook(book, accounts) {
     let newResultObject = {...borrow, ...matchingAccountById};
     resultArray.push(newResultObject);
 });
-  const length10ResultArray = resultArray.slice(0, 10);
+  //const length10ResultArray = resultArray.slice(0, 10);
+  const length10ResultArray = setArrayLength(resultArray, 10);
   return length10ResultArray;
+}
+
+function setArrayLength(array ,length) {
+  const result = array.slice(0, length);
+  return result;
 }
 
 module.exports = {
@@ -57,4 +63,5 @@ module.exports = {
   findBookById,
   partitionBooksByBorrowedStatus,
   getBorrowersForBook,
+  setArrayLength,
 };

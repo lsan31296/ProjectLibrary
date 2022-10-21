@@ -1,3 +1,5 @@
+const { setArrayLength, findBookById } = require("./books");
+
 function getTotalBooksCount(books = []) {
   //Goal: return a _number_ that represents the number of book objects inside of the array.
   return books.length;
@@ -58,10 +60,12 @@ function getMostCommonGenres(books) {
   //sorting with most common genres in descending order
   const sortedGenres = results.sort((a,b)=> a.count < b.count ? 1 : -1);
   //make sorted list length of 5
-  const sortedGenresLength5 = sortedGenres.slice(0, 5);
+  //const sortedGenresLength5 = sortedGenres.slice(0, 5);
+  const sortedGenresLength5 = setArrayLength(sortedGenres, 5);
   return sortedGenresLength5; 
 
 }
+
 
 function getMostPopularBooks(books) {
   //Goal: It returns an array containing five objects or fewer that represents the most 

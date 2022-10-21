@@ -71,6 +71,7 @@ function getBooksPossessedByAccount(account, books, authors) {
 
     else {
       let newBook = book;
+      //using helper function
       newBookAuthor = findAuthorById(authors, book.authorId);
       //newBookAuthor = authors.find(function(author) { return author.id === book.authorId; });
       //console.log(newBookAuthor);

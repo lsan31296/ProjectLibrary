@@ -1,0 +1,1 @@
+This Local Library Program takes a preloaded group of datasets regarding registered accounts, books and authors in order to display various stats.
